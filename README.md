@@ -10,7 +10,7 @@ npm i --save bento4-installer
 When the `bento4-installer` is required, as seen below, it returns an object that has the paths to the platform specific executables.
 
 ```js
-const bento4 = require('bento4-installer')
+const bento4 = require('@wickednesspro/bento4-latest')
 ```
 The bento4 object returned has the following properties:
 
