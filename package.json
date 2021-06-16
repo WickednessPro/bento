@@ -1,6 +1,6 @@
 {
-  "name": "@wickednesspro/bento4-custom",
-  "version": "1.0.0",
+  "name": "@wickednesspro/bento4-latest",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./src/**/*.spec.js"
