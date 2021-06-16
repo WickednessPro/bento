@@ -1,0 +1,23 @@
+{
+  "name": "@wickednesspro/bento4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./src/**/*.spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.0.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WickednessPro/bento.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WickednessPro/bento/issues"
+  },
+  "homepage": "https://github.com/WickednessPro/bento#readme",
+  "description": ""
+}
