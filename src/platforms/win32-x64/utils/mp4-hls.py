@@ -193,13 +193,13 @@ def ProcessSource(options, media_info, out_dir):
 
     kwargs = {
         'index_filename':            path.join(out_dir, options.media_playlist_name),
-        'segment_filename_template': path.join(out_dir, 'segment-%d.'+file_extension),
+        'segment_filename_template': path.join(out_dir, options.media_playlist_name+'%d.'+file_extension),
         'segment_url_template':      'segment-%d.'+file_extension,
         'show_info':                 True
     }
 
     if options.base_url != "":
-        kwargs["segment_url_template"] = options.base_url+media_info["dir"]+'/'+'segment-%d.'+file_extension
+        kwargs["segment_url_template"] = options.base_url+media_info["dir"]+'/'+options.media_playlist_name+'%d.'+file_extension
 
     if options.hls_version != 3:
         kwargs['hls_version'] = str(options.hls_version)
@@ -208,8 +208,8 @@ def ProcessSource(options, media_info, out_dir):
         kwargs['iframe_index_filename'] = path.join(out_dir, options.iframe_playlist_name)
 
     if options.output_single_file:
-        kwargs['segment_filename_template'] = path.join(out_dir, 'media.'+file_extension)
-        kwargs['segment_url_template']      = 'media.'+file_extension
+        kwargs['segment_filename_template'] = path.join(out_dir, options.media_file_name+'.'+file_extension)
+        kwargs['segment_url_template']      = options.media_file_name + file_extension
         kwargs['output_single_file']        = True
 
     if 'audio_format' in media_info and media_info.get('audio_track_id') != 0:
@@ -564,6 +564,8 @@ def main():
                       help="Directory where the Bento4 executables are located")
     parser.add_option('', "--base-url", metavar="<base_url>", dest="base_url", default="",
                       help="The base URL for the Media Playlists and TS files listed in the playlists. This is the prefix for the files.")
+    parser.add_option('', '--media-file-name', dest='media_file_name', default='media', help='Custom Media file name')
+
     (options, args) = parser.parse_args()
     if len(args) == 0:
         parser.print_help()
