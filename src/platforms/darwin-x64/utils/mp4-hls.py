@@ -564,6 +564,7 @@ def main():
                       help="Directory where the Bento4 executables are located")
     parser.add_option('', "--base-url", metavar="<base_url>", dest="base_url", default="",
                       help="The base URL for the Media Playlists and TS files listed in the playlists. This is the prefix for the files.")
+    parser.add_option('', '--media-file-name', dest='media_file_name', default='media', help='Custom Media file name')
     (options, args) = parser.parse_args()
     if len(args) == 0:
         parser.print_help()
